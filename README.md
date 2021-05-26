@@ -31,4 +31,4 @@
 7. [ ] Tela com informações sobre o site e referências utilizadas
 8. [ ] Criar uma página com um acervo virtual, para usuários de fora do museu.
 9. [ ] Desenvolver quizes didaticos e informativos para testar o conhecimento do usuário, ao errar uma resposta, o visitante será direcionado a página onde contém a resposta certa e a explicação da questão.
-10. 
+10. aaa

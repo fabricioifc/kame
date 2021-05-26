@@ -30,5 +30,9 @@
    6. [ ] Diferenciar elementos da Guerra do Contestado com de outros conflitos;
 7. [ ] Tela com informações sobre o site e referências utilizadas
 8. [ ] Criar uma página com um acervo virtual, para usuários de fora do museu.
+<<<<<<< HEAD
 9. [ ] Desenvolver quizes didaticos e informativos para testar o conhecimento do usuário, ao errar uma resposta, o visitante será direcionado a página onde contém a resposta certa e a explicação da questão.
 10. 
+=======
+9. [ ] Desenvolver quizes didaticos e informativos para testar o conhecimento do usuário, ao errar uma resposta, o visitante será direcionado a página onde contém a resposta certa e a explicação da questão.
+>>>>>>> f01cfcc76c1ff4241709c17179ecbeaa8f43eda9

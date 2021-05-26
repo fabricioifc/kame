@@ -7,6 +7,12 @@
 + Pesquisar sobre JavaScript
 + Estudar a ferramenta GIT (instalar) e a plataforma GITHUB (onde ficará o código-fonte)
 
+
+## Tarefas de Projeto
+
+1. [x] Criar o servidor na plataforma heroku
+   1. [x] Hospedar o site em kamebrasil.herokuapp.com
+
 ## Histórias
 
 1. [ ] Desenvolver a página inicial do site

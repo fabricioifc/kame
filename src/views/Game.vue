@@ -62,44 +62,45 @@ export default {
       terminou: false,
     }
   },
-  beforeMount() {
-    this.play()
+  created() {
+    this.carregarBandeiras().then(this.play())
     
   },
   methods: {
-    play() {
+    async carregarBandeiras() {
       let codes;
-    this.bandeiras = []
-    fetch('https://flagcdn.com/en/codes.json')
-      .then(response => response.json())
-      .then(data => codes = Object.keys(data))
-      .then(() => {
-        codes.sort(() => Math.random() - 0.5)
-        codes = codes.slice(0, 19)
-        
-        codes.forEach(item => {
+      this.bandeiras = []
+      fetch('https://flagcdn.com/en/codes.json')
+        .then(response => response.json())
+        .then(data => codes = Object.keys(data))
+        .then(() => {
+          codes.sort(() => Math.random() - 0.5)
+          codes = codes.slice(0, 19)
+          
+          codes.forEach(item => {
+            this.bandeiras.push(
+              {code: item, contestado: false, image: `https://flagcdn.com/108x81/${item}.webp`}
+            )
+          });
           this.bandeiras.push(
-            {code: item, contestado: false, image: `https://flagcdn.com/108x81/${item}.webp`}
+            {code: 'contestado', contestado: true, image: require('@/assets/bandeiras/band_contestado.png')}
           )
-        });
-        this.bandeiras.push(
-          {code: 'contestado', contestado: true, image: require('@/assets/bandeiras/band_contestado.png')}
-        )
 
-        this.bandeiras.sort(() => Math.random() - 0.5)
-        // console.log(this.bandeiras);
-      }).finally(
-        () => {
-            setInterval(() => {
-            this.pronto = true
-          }, 1000);
-        }
-      )
-      
-      this.terminou = false
-      this.acertou = false;
-      this.selecionada = null;
-      this.resultado = null
+          this.bandeiras.sort(() => Math.random() - 0.5)
+          // console.log(this.bandeiras);
+        }).finally(
+          () => {
+              setInterval(() => {
+              this.pronto = true
+            }, 1000);
+          }
+        )
+    },
+    play() {
+        this.terminou = false
+        this.acertou = false;
+        this.selecionada = null;
+        this.resultado = null
     },
     escolher: function(bandeira) {
       if (this.terminou) {

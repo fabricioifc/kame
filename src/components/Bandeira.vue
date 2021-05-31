@@ -3,15 +3,12 @@
     <img @click="escolher(bandeira)"
       :src="bandeira.image"
       width="108" height="81">
-    <!-- <img @click="escolher(bandeira)" 
-      :src="require('@/assets/' + bandeira.image)" 
-      :width=width :height=height> -->
   </span>
 </template>
 
 <script>
 export default {
-  props: ['bandeira', 'width', 'height'],
+  props: ['bandeira'],
   methods: {
     escolher: function(bandeira) {
       this.$parent.escolher(bandeira);

@@ -1,9 +1,14 @@
 <template>
   <section>
-    <div v-if="!pronto" class="carregando">
+    
+    <div v-if="!status.pronto" class="carregando">
       <code>Carregando Jogo...</code>
     </div>
-    <div class="pergunta" v-if="pronto">
+    <div v-if="status.pronto && !status.iniciar" class="carregando">
+      <code><button @click="status.iniciar = true">Jogar</button></code>
+    </div>
+
+    <div class="pergunta" v-show="status.pronto && status.iniciar">
       <h1>Qual é a bandeira do contestado?</h1>
 
       <span class="bandeiras"
@@ -15,17 +20,7 @@
             />
       </span>
 
-      <!-- <span class="bandeiras"
-        v-bind:key="b.id" 
-        v-for="b in bandeiras">
-          <Bandeira :bandeira=b 
-            :width=100 :height=65
-            :class="!selecionada ? '' : b.id == selecionada.id ? 'selecionada' : 'outras'" 
-            @click="enviar"
-            />
-      </span> -->
-
-      <div class="verificar" v-show="selecionada != null && !terminou">
+      <div class="verificar" v-show="selecionada != null && !status.terminou">
         <hr>
         <button @click="enviar" class="btn" type="button">Tem Certeza?</button>
       </div>
@@ -33,13 +28,13 @@
 
     <p>{{resultado}}</p>
 
-    <div v-if="selecionada != null && terminou && acertou">
+    <div v-if="selecionada != null && status.terminou && status.acertou">
       <Bandeira :bandeira=selecionada />
     </div>
 
-    <div v-show="terminou">
+    <div v-show="status.terminou">
       <button @click="play" class="btn btn-primary" type="button">
-        {{acertou ? 'Jogar' : 'Tentar Novamente'}}
+        {{status.acertou ? 'Jogar' : 'Tentar Novamente'}}
       </button>
     </div>
       
@@ -48,6 +43,7 @@
 
 <script>
 import Bandeira from '../components/Bandeira.vue'
+import getBandeirasRemote from '../services/bandeiras'
 export default {
   props: [],
   components: { Bandeira },
@@ -55,55 +51,33 @@ export default {
   data() {
     return {
       bandeiras: [],
-      pronto: false,
       selecionada: null,
       resultado: null,
-      acertou: false,
-      terminou: false,
+
+      status: {
+        acertou: false,
+        iniciar: false,
+        pronto: false,
+        terminou: false,
+      }
+      
     }
   },
   created() {
-    this.carregarBandeiras().then(this.play())
-    
+    this.play()
   },
   methods: {
-    async carregarBandeiras() {
-      let codes;
-      this.bandeiras = []
-      fetch('https://flagcdn.com/en/codes.json')
-        .then(response => response.json())
-        .then(data => codes = Object.keys(data))
-        .then(() => {
-          codes.sort(() => Math.random() - 0.5)
-          codes = codes.slice(0, 19)
-          
-          codes.forEach(item => {
-            this.bandeiras.push(
-              {code: item, contestado: false, image: `https://flagcdn.com/108x81/${item}.webp`}
-            )
-          });
-          this.bandeiras.push(
-            {code: 'contestado', contestado: true, image: require('@/assets/bandeiras/band_contestado.png')}
-          )
-
-          this.bandeiras.sort(() => Math.random() - 0.5)
-          // console.log(this.bandeiras);
-        }).finally(
-          () => {
-              setInterval(() => {
-              this.pronto = true
-            }, 1000);
-          }
-        )
-    },
-    play() {
-        this.terminou = false
-        this.acertou = false;
+    async play() {
+      this.bandeiras = await getBandeirasRemote(10).finally(() => {
+        this.status.terminou = false
+        this.status.acertou = false;
         this.selecionada = null;
         this.resultado = null
+        this.status.pronto = true
+      })
     },
     escolher: function(bandeira) {
-      if (this.terminou) {
+      if (this.status.terminou) {
         return false
       }
 
@@ -115,6 +89,7 @@ export default {
       this.selecionada = bandeira
       console.log(this.selecionada)
     },
+
     enviar: function() {
       
       if (!this.selecionada){
@@ -122,14 +97,14 @@ export default {
         return false;
       }
       console.log(this.selecionada);
-      this.acertou = this.selecionada.contestado
+      this.status.acertou = this.selecionada.contestado
 
-      if (this.acertou) {
+      if (this.status.acertou) {
         this.resultado = 'Parabéns! Essa é a bandeira do contestado!'
       } else {
         this.resultado = 'Que pena! Tente novamente!'
       }
-      this.terminou = true
+      this.status.terminou = true
     }
   },
   

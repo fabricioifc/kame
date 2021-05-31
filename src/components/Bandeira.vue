@@ -19,19 +19,19 @@ export default {
 </script>
 
 <style scoped>
-  span.bandeira {
+  .bandeira {
     cursor: pointer;
   }
 
-  span.bandeira img {
+  .bandeira img {
     border: 4px dashed #444;
     padding: 2.5px;
   }
-  span.bandeira.selecionada img {
+  .bandeira.selecionada img {
     border: 4px solid deeppink;
 
   }
-  span.bandeira.outras {
+  .bandeira.outras {
     opacity: 0.6;
   }
 </style>

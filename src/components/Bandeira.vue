@@ -1,0 +1,38 @@
+<template>
+  <span class="bandeira">
+    <img @click="escolher(bandeira)" 
+      :src="require('@/assets/' + bandeira.image)" 
+      :width=width :height=height>
+  </span>
+</template>
+
+<script>
+export default {
+  props: ['bandeira', 'width', 'height'],
+  methods: {
+    escolher: function(bandeira) {
+      this.$parent.escolher(bandeira);
+    },
+  }
+
+}
+</script>
+
+<style scoped>
+  span.bandeira.selecionada,
+  span.bandeira.outras {
+    cursor: pointer;
+  }
+
+  span.bandeira img {
+    border: 4px dashed #444;
+    padding: 2.5px;
+  }
+  span.bandeira.selecionada img {
+    border: 4px solid deeppink;
+
+  }
+  span.bandeira.outras {
+    opacity: 50%;
+  }
+</style>

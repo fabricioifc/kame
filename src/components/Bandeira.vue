@@ -19,8 +19,7 @@ export default {
 </script>
 
 <style scoped>
-  span.bandeira.selecionada,
-  span.bandeira.outras {
+  span.bandeira {
     cursor: pointer;
   }
 

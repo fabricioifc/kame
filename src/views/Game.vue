@@ -1,9 +1,21 @@
 <template>
   <section>
-    <div class="pergunta">
+    <div v-if="!pronto" class="carregando">
+      <code>Carregando Jogo...</code>
+    </div>
+    <div class="pergunta" v-if="pronto">
       <h1>Qual é a bandeira do contestado?</h1>
 
       <span class="bandeiras"
+        v-bind:key="item.code"
+        v-for="item in bandeiras">
+          <Bandeira :bandeira=item 
+            :class="!selecionada ? '' : item == selecionada ? 'selecionada' : 'outras'" 
+            @click="enviar"
+            />
+      </span>
+
+      <!-- <span class="bandeiras"
         v-bind:key="b.id" 
         v-for="b in bandeiras">
           <Bandeira :bandeira=b 
@@ -11,7 +23,7 @@
             :class="!selecionada ? '' : b.id == selecionada.id ? 'selecionada' : 'outras'" 
             @click="enviar"
             />
-      </span>
+      </span> -->
 
       <div class="verificar" v-show="selecionada != null && !terminou">
         <hr>
@@ -22,7 +34,7 @@
     <p>{{resultado}}</p>
 
     <div v-if="selecionada != null && terminou && acertou">
-      <Bandeira :bandeira=selecionada :width=200 :height=130 />
+      <Bandeira :bandeira=selecionada />
     </div>
 
     <div v-show="terminou">
@@ -42,24 +54,48 @@ export default {
   name: 'Game',
   data() {
     return {
-      bandeiras: [
-        {id: 1, name: 'Brazil', contestado: false, image: 'bandeiras/band_brasil.jpg'},
-        {id: 2, name: 'País de Gales', contestado: false, image: 'bandeiras/band_gales.png'},
-        {id: 3, name: 'Contestado', contestado: true, image: 'bandeiras/band_contestado.png'},
-        {id: 4, name: 'Paraguái', contestado: false, image: 'bandeiras/band_paraguai.png'},
-      ],
+      bandeiras: [],
+      pronto: false,
       selecionada: null,
       resultado: null,
       acertou: false,
-      terminou: false
+      terminou: false,
     }
   },
-  // created() {
-  //   // this.bandeiras.sort()
-  //   console.log(this.bandeiras);
-  // },
+  beforeMount() {
+    this.play()
+    
+  },
   methods: {
     play() {
+      let codes;
+    this.bandeiras = []
+    fetch('https://flagcdn.com/en/codes.json')
+      .then(response => response.json())
+      .then(data => codes = Object.keys(data))
+      .then(() => {
+        codes.sort(() => Math.random() - 0.5)
+        codes = codes.slice(0, 19)
+        
+        codes.forEach(item => {
+          this.bandeiras.push(
+            {code: item, contestado: false, image: `https://flagcdn.com/108x81/${item}.webp`}
+          )
+        });
+        this.bandeiras.push(
+          {code: 'contestado', contestado: true, image: require('@/assets/bandeiras/band_contestado.png')}
+        )
+
+        this.bandeiras.sort(() => Math.random() - 0.5)
+        // console.log(this.bandeiras);
+      }).finally(
+        () => {
+            setInterval(() => {
+            this.pronto = true
+          }, 1000);
+        }
+      )
+      
       this.terminou = false
       this.acertou = false;
       this.selecionada = null;
@@ -70,13 +106,13 @@ export default {
         return false
       }
 
-      const mesmaEscolha = this.selecionada && this.selecionada.id == bandeira.id
+      const mesmaEscolha = this.selecionada && this.selecionada == bandeira
       if (mesmaEscolha) {
         this.selecionada = null
         return false
       }
       this.selecionada = bandeira
-      console.log(this.selecionada.name)
+      console.log(this.selecionada)
     },
     enviar: function() {
       
@@ -106,6 +142,12 @@ export default {
     width: 50%;
     text-align: center;
   }
+
+  div.carregando {
+    margin: 2rem;
+    font-size: 2rem;
+  }
+
   span.bandeiras {
     margin-right: 10px;
   }

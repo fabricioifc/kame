@@ -1,8 +1,11 @@
 <template>
   <span class="bandeira">
-    <img @click="escolher(bandeira)" 
+    <img @click="escolher(bandeira)"
+      :src="bandeira.image"
+      width="108" height="81">
+    <!-- <img @click="escolher(bandeira)" 
       :src="require('@/assets/' + bandeira.image)" 
-      :width=width :height=height>
+      :width=width :height=height> -->
   </span>
 </template>
 

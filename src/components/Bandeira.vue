@@ -32,6 +32,6 @@ export default {
 
   }
   span.bandeira.outras {
-    opacity: 50%;
+    opacity: 0.6;
   }
 </style>

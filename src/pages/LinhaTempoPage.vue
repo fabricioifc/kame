@@ -1,10 +1,10 @@
 <template>
-  <h1>HomePage</h1>
+  <h1>Linha do Tempo</h1>
 </template>
 
 <script>
 export default {
-  name: "HomePage",
+  name: "LinhaTempo",
 };
 </script>
 

@@ -1,10 +1,10 @@
 <template>
-  <h1>HomePage</h1>
+  <h1>Acervo Virtual</h1>
 </template>
 
 <script>
 export default {
-  name: "HomePage",
+  name: "Acervo",
 };
 </script>
 

@@ -1,15 +1,14 @@
 <template>
-<div>
+  <div>
     <h1>Referencias</h1>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-    name:"Referencias"
-}
+  name: "Referencias",
+};
 </script>
 
 <style>
-
 </style>

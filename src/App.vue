@@ -1,43 +1,20 @@
 <template>
   <div id="app">
-    <div class="menu">
-      <ul>
-        <li>
-          <router-link to="/">HomePage</router-link>
-        </li>
-        <li>
-          <router-link to="referencias">Referencias</router-link>
-        </li>
-        <li>
-          <router-link to="mapa">Mapa</router-link>
-        </li>
-        <li>
-          <router-link to="linhatempo">Linha Temporal</router-link>
-        </li>
-        <li>
-          <router-link to="galeria">Galeria Animada</router-link>
-        </li>
-        <li>
-          <router-link to="jogos">Jogos</router-link>
-        </li>
-        <li>
-          <router-link to="acervo">Acervo Virtual</router-link>
-        </li>
-      </ul>
-      <router-view />
-    </div>
+    <Navbar />
+    <router-view />
   </div>
 </template>
 
 <script>
+import Navbar from "@/components/Navbar";
 export default {
   name: "App",
-  components: {},
+  components: { Navbar },
 };
 </script>
 
 <style>
-.menu {
+/* .menu {
   text-align: center;
   position: absolute;
   display: block;
@@ -47,5 +24,5 @@ export default {
   list-style: none;
   padding: 15px 15px;
   border-radius: 10px;
-}
+} */
 </style>

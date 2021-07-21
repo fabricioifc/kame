@@ -15,7 +15,7 @@
 
 ## Histórias
 
-1. [ ] Desenvolver a página inicial do site
+1. [x] Desenvolver a página inicial do site
 2. [ ] Criar uma tela de assinatura virtual dos visitantes, para que o usuário possa registrar a sua presença
    1. [ ] Um formulário com o nome, lugar de origem, idade, e a data da visita que o sistema irá fornecer
 3. [ ] Desenvolver um mapa interativo da região do contestado, em que o usuário ao testar tem informações importantes e curiosidades sobre cada local selecionado. 

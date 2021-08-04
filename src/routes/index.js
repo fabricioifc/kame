@@ -7,6 +7,8 @@ import LinhaTempoPage from "../pages/LinhaTempoPage.vue"
 import GaleriaPage from "../pages/GaleriaPage.vue"
 import JogosPage from "../pages/JogosPage.vue"
 import AcervoPage from "../pages/AcervoPage.vue"
+import { CarouselPlugin } from 'bootstrap-vue'
+Vue.use(CarouselPlugin)
 Vue.use(VueRouter)
 
 const rotas = [

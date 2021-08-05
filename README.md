@@ -1,12 +1,13 @@
-# 🇬🇬  kame
+# 🇬🇬 kame
+
 ##### Site sobre a guerra do contestado
 
 ## Pesquisa
-+ Pesquisar por bibliotecas que auxiliem no design responsivo (ex: bulma, bootstrap, material design)
-+ Pesquisar por bibliotecas que manipulem mapas interativos
-+ Pesquisar sobre JavaScript
-+ Estudar a ferramenta GIT (instalar) e a plataforma GITHUB (onde ficará o código-fonte)
 
+- Pesquisar por bibliotecas que auxiliem no design responsivo (ex: bulma, bootstrap, material design)
+- Pesquisar por bibliotecas que manipulem mapas interativos
+- Pesquisar sobre JavaScript
+- Estudar a ferramenta GIT (instalar) e a plataforma GITHUB (onde ficará o código-fonte)
 
 ## Tarefas de Projeto
 
@@ -16,12 +17,12 @@
 ## Histórias
 
 1. [x] Desenvolver a página inicial do site
-2. [ ] Criar uma tela de assinatura virtual dos visitantes, para que o usuário possa registrar a sua presença
+2. [ ] `Marília|Fabricio` - Criar uma tela de assinatura virtual dos visitantes, para que o usuário possa registrar a sua presença
    1. [ ] Um formulário com o nome, lugar de origem, idade, e a data da visita que o sistema irá fornecer
-3. [ ] Desenvolver um mapa interativo da região do contestado, em que o usuário ao testar tem informações importantes e curiosidades sobre cada local selecionado. 
-4. [ ] Criar uma linha do tempo, onde o visitante poderá ver o que ocorreu em cada ano, de uma maneira mais simples e resumida.
-5. [ ] Galeria de fotos animada, onde as fotos passarão automaticamente com descrição e indicação de pessoas e fatos importantes.
-6. [ ] Jogos 
+3. [ ] `Wesllen` - Desenvolver um mapa interativo da região do contestado, em que o usuário ao testar tem informações importantes e curiosidades sobre cada local selecionado.
+4. [ ] `Marilia|Wesllen` - Criar uma linha do tempo, onde o visitante poderá ver o que ocorreu em cada ano, de uma maneira mais simples e resumida.
+5. [ ] `João Eduardo` - Galeria de fotos animada, onde as fotos passarão automaticamente com descrição e indicação de pessoas e fatos importantes.
+6. [ ] Jogos
    1. [ ] Adivinhar a bendeira do contestado;
    2. [ ] Pequenas abas de "Você sabia?", nos cantos da tela, onde curiosidades e fatos ficarão passando alternadamente com que o usuário possa ler a qualquer momento.;
    3. [ ] Adivinhar o nome de personagens da guerra;

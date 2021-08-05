@@ -24,6 +24,7 @@
                 <b-form-input
                   id="input-2"
                   v-model="form.name"
+                  ref="name"
                   placeholder="Seu Nome"
                   required
                   autofocus
@@ -123,6 +124,7 @@ export default {
       this.form.idade = null;
       this.$nextTick(() => {
         // this.show = true;
+        this.$refs.name.focus();
       });
     },
     getVisitantes() {

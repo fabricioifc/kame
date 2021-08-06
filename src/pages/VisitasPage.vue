@@ -72,13 +72,32 @@
         align-self="center"
         class="d-none d-lg-block"
       >
-        <b-card
-          class="text-center"
-          title="Visitas "
-        >
-          <b-card-body v-if="quantidade">
-            <h2>{{quantidade}}</h2>
-          </b-card-body>
+        <b-card class="text-center">
+
+          <b-row>
+            <b-col>
+              <b-button
+                variant="primary"
+                disabled
+              >
+                <h3>
+                  <b-badge variant="light">{{quantidade_mes}}</b-badge>
+                </h3>
+                Visitas no Mês
+              </b-button>
+            </b-col>
+            <b-col>
+              <b-button
+                variant="dark"
+                disabled
+              >
+                <h3>
+                  <b-badge variant="light">{{quantidade}}</b-badge>
+                </h3>
+                Visitas Totais
+              </b-button>
+            </b-col>
+          </b-row>
         </b-card>
         <!-- <b-img
           fluid-grow
@@ -92,6 +111,7 @@
 </template>
 
 <script>
+import { supabase } from "../lib/database";
 export default {
   name: "VisitasPage",
   data() {
@@ -101,7 +121,8 @@ export default {
         cidade: "",
         idade: null,
       },
-      quantidade: null,
+      quantidade: 0,
+      quantidade_mes: 0,
     };
   },
   methods: {
@@ -127,25 +148,26 @@ export default {
         this.$refs.name.focus();
       });
     },
-    getVisitantes() {
-      return JSON.parse(localStorage.getItem("visitantes")) || [];
-    },
-    setVisitantes(lista) {
-      return localStorage.setItem("visitantes", JSON.stringify(lista));
-    },
+    async addVisitante(visitante) {
+      const { data, error } = await supabase
+        .from("visitas")
+        .insert([visitante]);
 
-    addVisitante(visitante) {
-      let visitantes = [...this.getVisitantes(), visitante];
-      this.setVisitantes(visitantes);
-      this.quantidade = visitantes.length;
-
-      console.log(this.getVisitantes());
+      this.quantidade += 1;
+      this.quantidade_mes += 1;
     },
   },
-  mounted() {
-    // localStorage.removeItem("visitantes");
-    console.log(this.getVisitantes());
-    this.quantidade = this.getVisitantes().length;
+  async mounted() {
+    let { data, error, count } = await supabase
+      .from("visitas")
+      .select("*", { count: "exact" });
+
+    let { data: visitas_mes } = await supabase
+      .from("w_visitas_mes")
+      .select("count");
+
+    this.quantidade = count;
+    this.quantidade_mes = visitas_mes[0].count;
   },
 };
 </script>

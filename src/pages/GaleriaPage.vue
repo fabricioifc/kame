@@ -1,61 +1,86 @@
 <template>
   <div>
-    <b-carousel
-      id="carousel-1"
-      :interval="4000"
-      controls
-      indicators
-      background="#ababab"
-      img-width="1024"
-      img-height="480"
-      style="text-shadow: 1px 1px 2px #333"
-      @sliding-start="onSlideStart"
-      @sliding-end="onSlideEnd"
-    >
-      <!-- Text slides with image -->
-      <b-carousel-slide
-        caption="First slide"
-        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-        img-src="https://picsum.photos/1024/480/?image=52"
-      ></b-carousel-slide>
+    <b-row> </b-row>
+    <b-col cols="12" class="text-center mt-3">
+      <p class="museu-text font-weight-bold">Personagens Importanates:</p>
+    </b-col>
 
-      <!-- Slides with custom text -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-        <h1>Hello world!</h1>
-      </b-carousel-slide>
+    <b-row>
+      <b-col cols="6" class="text-center mt-3">
+        <p class="museu-text font-weight-bold">Exercito do Brasil:</p>
+        <b-carousel
+          id="carousel-1"
+          :interval="4000"
+          controls
+          indicators
+          background="#ababab"
+          img-width="1024"
+          img-height="480"
+          style="text-shadow: 1px 1px 2px #333"
+          @sliding-start="onSlideStart"
+          @sliding-end="onSlideEnd"
+        >
+          <!-- Text slides with image -->
+          <b-carousel-slide
+            caption="João Gualberto Gomes de Sá Filho"
+            text="Militar brasileiro bem sucessedido, graduado como Bacharel em Ciências Físicas e Matemáticas, foi prefeito de Curitiba, mas morreu na batalha do Irani."
+            :img-src="require('@/assets/images/gualberto.jpg')"
+          ></b-carousel-slide>
 
-      <!-- Slides with image only -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>
+          <b-carousel-slide
+            caption="Carlos Frederico de Mesquita Tertuliano Potiguara"
+            text="Militar que havia lutado na guerra dos canudos pelos brasileiros, que tentou um acordo sem êxito, depois atacou Santo Antonio que forçou os rebeldes fugirem."
+            :img-src="require('@/assets/images/tertuliano.jpg')"
+          ></b-carousel-slide>
 
-      <!-- Slides with img slot -->
-      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-      <b-carousel-slide>
-        <img
-          class="d-block img-fluid w-100"
-          width="1024"
-          height="480"
-          src="https://picsum.photos/1024/480/?image=55"
-          alt="image slot"
-        />
-      </b-carousel-slide>
+          <b-carousel-slide
+            caption="Hermes da fonseca contestado"
+            text="Hermes Rodrigues da Fonseca foi um militar e político brasileiro, presidente do Brasil entre 1910 e 1914. Foi o primeiro gaúcho a ser eleito presidente da República"
+            :img-src="require('@/assets/images/fonseca.jpg')"
+          ></b-carousel-slide>
+        </b-carousel>
 
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide
-        caption="Blank Image"
-        img-blank
-        img-alt="Blank image"
-      >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          eros felis, tincidunt a tincidunt eget, convallis vel est. Ut
-          pellentesque ut lacus vel interdum.
-        </p>
-      </b-carousel-slide>
-    </b-carousel>
+        <p class="mt-4">{{ sliding }}</p>
+      </b-col>
 
-    <p class="mt-4">
-      Sliding: {{ sliding }}
-    </p>
+      <b-col class="text-center mt-3">
+        <p class="museu-text font-weight-bold">Rebeldes:</p>
+        <b-carousel
+          id="carousel-1"
+          :interval="4000"
+          controls
+          indicators
+          background="#ababab"
+          img-width="1024"
+          img-height="480"
+          style="text-shadow: 1px 1px 2px #333"
+          @sliding-start="onSlideStart"
+          @sliding-end="onSlideEnd"
+        >
+          <!-- Text slides with image -->
+          <b-carousel-slide
+            caption="José Maria de Santo Agostinho"
+            text="José Maria de Santo Agostinho, era um místico brasileiro do Estado de Santa Catarina."
+            :img-src="require('@/assets/images/imagem1.jpg')"
+          ></b-carousel-slide>
+
+          <!-- Slides with custom text -->
+          <b-carousel-slide
+            caption="Maria Rosa"
+            text="Maria Rosa, conhecida como “menina santa” foi uma das seguidoras mais fiéis e fervorosas do monge José Maria"
+            :img-src="require('@/assets/images/imagem2.jpeg')"
+          ></b-carousel-slide>
+
+          <b-carousel-slide
+            caption="Deodato Manoel Ramos"
+            text="Deodato Manuel Ramos, considerado pelos historiadores como o último líder dos contestadores. Adeodato transferiu o núcleo dos revoltosos para o vale de Santa Maria, que contava ainda com cerca de 50 mil homens."
+            :img-src="require('@/assets/images/adeodato.jpg')"
+          ></b-carousel-slide>
+        </b-carousel>
+
+        <p class="mt-4">{{ sliding }}</p>
+      </b-col>
+    </b-row>
   </div>
 </template>
 

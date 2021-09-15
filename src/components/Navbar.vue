@@ -4,6 +4,7 @@
       toggleable="lg"
       type="light"
       variant="light"
+      class="fixed-top"
     >
       <b-navbar-brand to="/"> Guerra do Contestado </b-navbar-brand>
 

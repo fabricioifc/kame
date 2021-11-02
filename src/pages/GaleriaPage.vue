@@ -24,7 +24,7 @@
           <b-carousel-slide
             caption="João Gualberto Gomes de Sá Filho"
             text="Militar brasileiro bem sucessedido, graduado como Bacharel em Ciências Físicas e Matemáticas, foi prefeito de Curitiba, mas morreu na batalha do Irani."
-            :img-src="require('@/assets/images/gualberto.jpg')"
+            :img-src="require('@/assets/images/gualberto.png')"
           ></b-carousel-slide>
 
           <b-carousel-slide

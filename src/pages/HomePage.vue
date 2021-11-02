@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="teste">
     <!-- <b-row>
       <b-col
         cols="6"
@@ -27,7 +27,7 @@
     </b-row> -->
 
     <!-- CARD COM IMAGEM -->
-    <b-card
+    <!--<b-card
       overlay
       :img-src="require('@/assets/images/contestado_1.jpg')"
       img-alt="Card Image"
@@ -38,7 +38,30 @@
         <h1>Guerra do Contestado</h1>
         <b-button @click="scrollToElement" variant="dark">VAMOS LÁ!</b-button>
       </b-card-text>
-    </b-card>
+    </b-card>-->
+
+    <b-row class="fundo-landing">
+      <b-col class="col-xs-12 col-md-6" cols="6">
+        <b-img
+          :src="require('@/assets/images/logoinicio.png')"
+          class="landing-page-logo"
+          alt=""
+          fluid
+        />
+      </b-col>
+      <b-col class="col-xs-12 col-md-6" cols="6">
+        <!-- a marca dágua do if lá, aquela que tem que colocar no topo direito -->
+        <!-- <b-img :src="require('@/assets/images/marca-dagua-if')" class="marca-dagua-if" alt="" />-->
+        <b-container>
+          <h1>Vamos Navegar?</h1>
+          <b-button class="next-page">Próxima página</b-button>
+          <p>
+            Aproveite essa experiência e saiba mais sobre a história do
+            Contestado.
+          </p>
+        </b-container>
+      </b-col>
+    </b-row>
 
     <b-row>
       <b-col cols="6">
@@ -147,11 +170,29 @@ export default {
   margin-bottom: 0.2rem;
 }
 
+.fundo-landing {
+  margin-top: 5%;
+  background-color: #011401;
+  padding-bottom: 20px;
+}
+
 .card-img-overlay {
   text-align: center;
   top: 30px;
   /* bottom: 30px; */
 }
+
+.teste {
+  overflow-x: hidden;
+}
+
+.landing-page-logo {
+  width: 80%;
+  height: 90%;
+  margin-top: 6%;
+  margin-left: 5%;
+}
+
 @media only screen and (max-width: 900px) {
   .card-img-overlay {
     text-align: center;

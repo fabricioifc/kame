@@ -43,7 +43,7 @@
     <b-row class="fundo-landing">
       <b-col class="col-xs-12 col-md-6" cols="6">
         <b-img
-          :src="require('@/assets/images/logoinicio.png')"
+          :src="require('@/assets/images/logo_inicio.png')"
           class="landing-page-logo"
           alt=""
           fluid
@@ -53,9 +53,9 @@
         <!-- a marca dágua do if lá, aquela que tem que colocar no topo direito -->
         <!-- <b-img :src="require('@/assets/images/marca-dagua-if')" class="marca-dagua-if" alt="" />-->
         <b-container>
-          <h1>Vamos Navegar?</h1>
+          <h1 class="titulo-homepage">Vamos Navegar?</h1>
           <b-button class="next-page">Próxima página</b-button>
-          <p>
+          <p class="escrita-homepage">
             Aproveite essa experiência e saiba mais sobre a história do
             Contestado.
           </p>
@@ -204,4 +204,29 @@ export default {
 .card-img {
   opacity: 0.8;
 }
+.titulo-homepage{
+font-family: 'Antonio', sans-serif;
+color: white;
+font-size: 80px
+}
+
+.escrita-homepage{
+  font-family: 'Anonymous Pro', monospace;
+  color: white;
+}
+
+.next-page{
+  height: 48px;
+  width: 200px;
+  border: none;
+  border-radius: 0px;
+background-color: rgba(255, 255, 255, 0.096);
+font-family: 'Anonymous Pro', monospace;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Antonio:wght@100;700&family=Forum&family=Graduate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Antonio:wght@100;700&family=Graduate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Antonio:wght@100;700&family=Graduate&display=swap');
 </style>

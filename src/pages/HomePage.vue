@@ -53,10 +53,10 @@
         <!-- a marca dágua do if lá, aquela que tem que colocar no topo direito -->
         <!-- <b-img :src="require('@/assets/images/marca-dagua-if')" class="marca-dagua-if" alt="" />-->
         <b-container>
-          <h1 class="titulo-homepage">Vamos Navegar?</h1>
+          <h1 class="titulo-homepage">VAMOS <br> NAVEGAR?</h1>
           <b-button class="next-page">Próxima página</b-button>
           <p class="escrita-homepage">
-            Aproveite essa experiência e saiba mais sobre a história do
+            Aproveite essa experiência e saiba <br> mais sobre a história do
             Contestado.
           </p>
         </b-container>
@@ -190,7 +190,7 @@ export default {
   width: 80%;
   height: 90%;
   margin-top: 6%;
-  margin-left: 5%;
+  margin-left: 23%;
 }
 
 @media only screen and (max-width: 900px) {
@@ -207,12 +207,16 @@ export default {
 .titulo-homepage{
 font-family: 'Antonio', sans-serif;
 color: white;
-font-size: 80px
+font-size: 100px;
+text-align: left;
+margin-top: 15%;
+font-weight: 700
 }
 
 .escrita-homepage{
   font-family: 'Anonymous Pro', monospace;
   color: white;
+  margin-top: 5%;
 }
 
 .next-page{
@@ -222,11 +226,13 @@ font-size: 80px
   border-radius: 0px;
 background-color: rgba(255, 255, 255, 0.096);
 font-family: 'Anonymous Pro', monospace;
+margin-top: 3%;
+margin-left: 10%;
 }
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Antonio:wght@100;700&family=Forum&family=Graduate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Antonio:wght@100;700&family=Bebas+Neue&family=Forum&family=Graduate&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Antonio:wght@100;700&family=Graduate&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Antonio:wght@100;700&family=Graduate&display=swap');
 </style>

@@ -1,45 +1,5 @@
 <template>
-  <div class="teste">
-    <!-- <b-row>
-      <b-col
-        cols="6"
-        class="bg-danger text-center"
-      >
-        Coluna com quatro espaços
-        Coluna com quatro espaços
-        Coluna com quatro espaços
-        Coluna com quatro espaços
-        Coluna com quatro espaços
-        Coluna com quatro espaços
-      </b-col>
-      <b-col
-        cols="5"
-        class="bg-primary text-center"
-      >
-        Coluna com quatro espaços
-      </b-col>
-      <b-col
-        cols="1"
-        class="bg-success text-center"
-      >
-        Coluna com quatro espaços
-      </b-col>
-    </b-row> -->
-
-    <!-- CARD COM IMAGEM -->
-    <!--<b-card
-      overlay
-      :img-src="require('@/assets/images/contestado_1.jpg')"
-      img-alt="Card Image"
-      text-variant="white"
-    >
-      <b-card-text>
-        <h5>IFC Fraiburgo</h5>
-        <h1>Guerra do Contestado</h1>
-        <b-button @click="scrollToElement" variant="dark">VAMOS LÁ!</b-button>
-      </b-card-text>
-    </b-card>-->
-
+  <div class="bg-dark text-light">
     <b-row class="fundo-landing">
       <b-col class="col-xs-12 col-md-6" cols="6">
         <b-img
@@ -53,11 +13,16 @@
         <!-- a marca dágua do if lá, aquela que tem que colocar no topo direito -->
         <!-- <b-img :src="require('@/assets/images/marca-dagua-if')" class="marca-dagua-if" alt="" />-->
         <b-container>
-          <h1 class="titulo-homepage">VAMOS <br> NAVEGAR?</h1>
-          <b-button class="next-page">Próxima página</b-button>
+          <h1 class="titulo-homepage">
+            VAMOS <br />
+            NAVEGAR?
+          </h1>
+          <b-button class="next-page" @click="scrollToElement">
+            <b-icon-arrow-down></b-icon-arrow-down> Vamos Lá!
+          </b-button>
           <p class="escrita-homepage">
-            Aproveite essa experiência e saiba <br> mais sobre a história do
-            Contestado.
+            Aproveite essa experiência e saiba <br />
+            mais sobre a história do Contestado.
           </p>
         </b-container>
       </b-col>
@@ -172,7 +137,7 @@ export default {
 
 .fundo-landing {
   margin-top: 5%;
-  background-color: #011401;
+  /* background-color: #011401; */
   padding-bottom: 20px;
 }
 
@@ -204,35 +169,29 @@ export default {
 .card-img {
   opacity: 0.8;
 }
-.titulo-homepage{
-font-family: 'Antonio', sans-serif;
-color: white;
-font-size: 100px;
-text-align: left;
-margin-top: 15%;
-font-weight: 700
+.titulo-homepage {
+  font-family: "Antonio", sans-serif;
+  color: white;
+  font-size: 100px;
+  text-align: left;
+  margin-top: 15%;
+  font-weight: 700;
 }
 
-.escrita-homepage{
-  font-family: 'Anonymous Pro', monospace;
+.escrita-homepage {
+  font-family: "Anonymous Pro", monospace;
   color: white;
   margin-top: 5%;
 }
 
-.next-page{
+.next-page {
   height: 48px;
-  width: 200px;
   border: none;
   border-radius: 0px;
-background-color: rgba(255, 255, 255, 0.096);
-font-family: 'Anonymous Pro', monospace;
-margin-top: 3%;
-margin-left: 10%;
+  background-color: rgba(255, 255, 255, 0.096);
+  font-family: "Anonymous Pro", monospace;
+  margin-top: 3%;
+  /* margin-left: 10%; */
+  font-weight: bold;
 }
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Antonio:wght@100;700&family=Bebas+Neue&family=Forum&family=Graduate&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Antonio:wght@100;700&family=Graduate&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Antonio:wght@100;700&family=Graduate&display=swap');
 </style>

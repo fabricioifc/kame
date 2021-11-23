@@ -12,17 +12,3 @@ export default {
   components: { Navbar },
 };
 </script>
-
-<style>
-/* .menu {
-  text-align: center;
-  position: absolute;
-  display: block;
-}
-.menu li {
-  display: inline-block;
-  list-style: none;
-  padding: 15px 15px;
-  border-radius: 10px;
-} */
-</style>

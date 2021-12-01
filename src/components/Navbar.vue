@@ -1,5 +1,4 @@
 <template>
-  <div class="navegacao">
     <b-navbar toggleable="lg" type="light" variant="light" class="fixed-top">
       <b-navbar-brand to="/"> Guerra do Contestado </b-navbar-brand>
 
@@ -38,15 +37,8 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-  </div>
 </template>
 
 <script>
 export default {};
 </script>
-
-<style>
-.navegacao {
-  border-bottom: solid 1px red;
-}
-</style>

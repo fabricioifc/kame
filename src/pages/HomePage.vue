@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-dark text-light">
-    <b-row class="fundo-landing">
+  <div>
+    <b-row class="bg-dark text-light">
       <b-col class="col-xs-12 col-md-6" cols="6">
         <b-img
           :src="require('@/assets/images/logo_inicio.png')"

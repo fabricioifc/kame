@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="home">
     <b-row class="bg-dark text-light">
       <b-col class="col-xs-12 col-md-6" cols="6">
         <b-img
@@ -27,9 +28,9 @@
         </b-container>
       </b-col>
     </b-row>
-
+   </div> 
     <b-row>
-      <b-col cols="6">
+      <b-col cols="12">
         <b-link to="galeria">
           <b-img
             ref="scrollToMe"
@@ -39,21 +40,38 @@
           />
         </b-link>
       </b-col>
-      <b-col cols="6">
-        <h3 class="mt-3 mb-5">Mapa interativo</h3>
-        <div class="text-center">
-          <h1>Sobre o Projeto</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nulla
-            accusantium earum nobis natus magnam cum quidem ipsam sequi. Iure
-            soluta nam doloremque quis totam vero! Officia eligendi quidem
-            atque.
-          </p>
+     
+        <div class="box-home">
+          <b-col cols="4">
+            <h1 class="titulo-homepage-mapa">VOCÊ SABIA <br >QUE TEMOS <br> UM MAPA <br> INTERATIVO?</h1>
+          </b-col>
+          <b-col cols="4">
+            <b-link class="smarthphone-home" to="mapa">
+              <b-img
+                ref="scrollToMe"
+                :src="require('@/assets/images/celular.png')"
+                alt=""
+                fluid
+              />
+            </b-link>
+          </b-col>
+          <b-col cols="4">
+            <div class="list-conflicts" cols="3">
+              <h4 class="subtitle-home-mapa">Áreas de conflito</h4>
+              <p class="paragraph-home">No mapa você encontra as principais localizações onde ocorreu a guerra do contestado</p>
+              <ul class="list-home">
+                <li class="paragraph-home">Santa Catarina</li>
+              
+                <li class="paragraph-home">Paraná</li>
+               
+                <li class="paragraph-home">Rio Grande do Sul</li>
+                
+              </ul>
+            </div>
+          </b-col>
         </div>
-      </b-col>
-    </b-row>
-
-    <b-row>
+  <div class="box-home2">
+    <b-row >
       <b-col cols="4">
         <b-link to="acervo">
           <b-img
@@ -81,34 +99,103 @@
           ></b-img>
         </b-link>
       </b-col>
-      <b-col cols="12">
-        <b-img
-          :src="require('@/assets/images/home_nav_4.png')"
-          alt="Pessoas"
-          fluid
-        ></b-img>
-      </b-col>
-    </b-row>
-
-    <b-row class="align-items-center">
-      <b-col cols="6" class="text-center mt-3">
-        <p class="">Espaço Físico</p>
-        <p class="museu-text font-weight-bold">O Museu</p>
-      </b-col>
-      <b-col class="">
-        <p class="text-center font-weight-bold contato">E-MAIL</p>
-        <p class="text-center small">alo@sitebacana.com.br</p>
-      </b-col>
-      <b-col>
-        <p class="text-center font-weight-bold contato">TELEFONE</p>
-        <p class="text-center small">(12) 3456-7890</p>
-      </b-col>
-      <b-col>
-        <p class="text-center font-weight-bold contato">ENDEREÇO</p>
-        <p class="text-center small">Rua Qualquer, 123 - Cidade, SP</p>
-      </b-col>
     </b-row>
   </div>
+    <div class="box-home-sobre">
+          <b-col cols="4">
+            <h1 class="titulo-homepage-sobre"> Entre em contato </h1>
+            <hr class="linha-titulo"/>
+            <ul class="list-sobre">
+                <li class="paragraph-home contato-sobre">(49) 3202-8810</li>
+              
+                <li class="paragraph-home contato-sobre">brasilkame@gmail.com</li>
+               
+                <li class="paragraph-home contato-sobre">www.fraiburgo.ifc.edu.br</li>
+                
+              </ul>
+              <hr class="linha-titulo"/>  
+          </b-col>
+          <b-col cols="4">
+            <div class="time"> 
+              <h4 class="subtitle-home-sobre">O Time</h4>
+              <div class="time-item">
+                <b-col cols="8" class="item-time">
+                  <h6 class="nome-time">Marilia Garces</h6>
+                  <span class="span-time">Aluna IFC Fraiburgo</span>
+                </b-col>
+                <b-col cols="4">
+                  <b-img
+                    :src="require('@/assets/images/marilia.png')"
+                    alt="Conteúdo"
+                    fluid
+                  ></b-img>
+                </b-col>
+              </div>
+
+               <div class="time-item">
+                <b-col cols="8" class="item-time">
+                  <h6 class="nome-time">João Eduardo</h6>
+                  <span class="span-time">Alune IFC Fraiburgo</span>
+                </b-col>
+                <b-col cols="4">
+                  <b-img
+                    :src="require('@/assets/images/joao.png')"
+                    alt="Conteúdo"
+                    fluid
+                  ></b-img>
+                </b-col>
+              </div>
+
+               <div class="time-item">
+                <b-col cols="8" class="item-time">
+                  <h6 class="nome-time">Vitor Fantinel</h6>
+                  <span class="span-time">Aluno IFC Fraiburgo</span>
+                </b-col>
+                <b-col cols="4">
+                  <b-img
+                    :src="require('@/assets/images/vitor.png')"
+                    alt="Conteúdo"
+                    fluid
+                  ></b-img>
+                </b-col>
+              </div>
+
+               <div class="time-item">
+                <b-col cols="8" class="item-time">
+                  <h6 class="nome-time">Wesllen Felipe</h6>
+                  <span class="span-time">Aluno IFC Fraiburgo</span>
+                </b-col>
+                <b-col cols="4">
+                  <b-img
+                    :src="require('@/assets/images/wesllen.png')"
+                    alt="Conteúdo"
+                    fluid
+                  ></b-img>
+                </b-col>
+              </div>              
+            </div>
+          </b-col>
+          <b-col cols="4">
+            <div class="orientadores" cols="3">
+              <h1 class="titulo-homepage-sobre orientadores-title">Orientadores</h1>
+              <p class="paragraph-sobre">Professores responsáveis pela orientação do projeto:</p>
+              <hr class="linha-titulo"/>  
+              <ul class="list-sobre orientadores-list">
+                <li class="orientador-nome">Rodrigo Espinosa Cabral</li>
+                <p class="paragraph-sobre">Possui graduação em Letras Português e Inglês e Mestrado em Letras Inglês. Professor do Instituto Federal Catarinense, Campus Fraiburgo SC.</p>
+              
+                <li class="orientador-nome">Fabricio Bizotto</li>
+                <p class="paragraph-sobre">Professor de Informática do IFC, especializado em programação web, mestrando em ciência da computação.</p>
+                
+              </ul>
+            </div>
+          </b-col>
+      </div>
+    </b-row>
+    
+  </div>
+
+  
 </template>
 
 <script>
@@ -153,9 +240,10 @@ export default {
 
 .landing-page-logo {
   width: 80%;
-  height: 90%;
-  margin-top: 6%;
+  height: 72%;
+  margin: 6%;
   margin-left: 23%;
+  margin-bottom: 10%;
 }
 
 @media only screen and (max-width: 900px) {
@@ -193,5 +281,155 @@ export default {
   margin-top: 3%;
   /* margin-left: 10%; */
   font-weight: bold;
+}
+.home{
+  padding-top: 5%;
+  background-color: #011401;
+}
+.box-home {
+  display:flex;
+  padding: 50px 50px 0px 50px;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/images/fundohomemapa.png");
+}
+.box-home-sobre {
+  display:flex;
+  width: 100%;
+  height: 100%;
+  padding: 50px 50px 0px 50px;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/images/fundohomemapa.png");
+}
+
+.box-home2 {
+  display:flex;
+  padding: 50px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/images/fundo3itens.png");
+}
+
+.titulo-homepage-mapa {
+  font-family: "Antonio", sans-serif;
+  color: white;
+  font-size: 80px;
+  font-weight: 700; 
+  text-transform: uppercase;
+  margin-left: 30px;
+}
+.titulo-homepage-sobre {
+  font-family: "Antonio", sans-serif;
+  color: white;
+  font-size: 50px;
+  font-weight: 700; 
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.orientadores {
+  text-align: left;
+}
+
+.subtitle-home{
+  color: #fff;
+}
+
+.subtitle-home-mapa{
+  font-family: "Anonymous Pro", monospace;
+  color:white;
+}
+
+.subtitle-home-sobre{
+  font-family: "Anonymous Pro", monospace;
+  color:white;
+ 
+}
+
+.paragraph-home{
+  font-family: "Anonymous Pro", monospace;
+  color:white;
+}
+
+.paragraph-sobre{
+  font-size:14px;
+  font-family: "Anonymous Pro", monospace;  
+  color:white;
+}
+
+.smarthphone-home{
+  width: 30%;
+}
+
+.list-conflicts{
+  display:flex;
+  flex-direction: column;
+}
+
+.list-home{
+  margin-top:20px;
+  height: 32vh;
+  color: #fff;
+  border-left: 1px solid #fff;
+  justify-content: center;
+}
+.list-sobre{
+  color: #fff;
+  justify-content: center;
+}
+
+.list-home li {
+  margin-top: 40px;
+  margin-bottom:40px;
+}
+
+.contato-sobre {
+  margin-top: 40px;
+  margin-bottom:40px;
+}
+.time{
+  text-align: center;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+
+.nome-time {
+  font-weight: 600;
+  font-size: 18px;
+  font-family: "Anonymous Pro", monospace;
+  color:white;
+}
+
+.span-time{
+  font-size: 14px;
+  font-family: "Anonymous Pro", monospace;
+  color:white;
+}
+.time-item{
+  display:flex;
+  margin-top: 40px;
+}
+.item-time{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.orientadores {
+  text-align: left;
+}
+.orientador-nome{
+  font-weight: 600;
+  font-size: 18px;
+  font-family: "Anonymous Pro", monospace;
+}
+.orientadores-title{
+  text-align: left;
+}
+.orientadores-list{
+  margin-left: -20px;
 }
 </style>

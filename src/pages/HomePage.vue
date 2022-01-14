@@ -29,26 +29,14 @@
       </b-col>
     </b-row>
    </div> 
-    <b-row>
-      <b-col cols="12">
-        <b-link to="galeria">
-          <b-img
-            ref="scrollToMe"
-            :src="require('@/assets/images/home_mapa.png')"
-            alt=""
-            fluid
-          />
-        </b-link>
-      </b-col>
-     
-        <div class="box-home">
+    <b-row> 
+        <div ref="scrollToMe" class="box-home">
           <b-col cols="4">
-            <h1 class="titulo-homepage-mapa">VOCÊ SABIA <br >QUE TEMOS <br> UM MAPA <br> INTERATIVO?</h1>
+            <h1  class="titulo-homepage-mapa">VOCÊ SABIA <br >QUE TEMOS <br> UM MAPA <br> INTERATIVO?</h1>
           </b-col>
           <b-col cols="4">
             <b-link class="smarthphone-home" to="mapa">
               <b-img
-                ref="scrollToMe"
                 :src="require('@/assets/images/celular.png')"
                 alt=""
                 fluid
@@ -73,7 +61,7 @@
   <div class="box-home2">
     <b-row >
       <b-col cols="4">
-        <b-link to="acervo">
+        <b-link to="galeria">
           <b-img
             :src="require('@/assets/images/home_nav_1.png')"
             alt="Conteúdo"
@@ -283,7 +271,8 @@ export default {
   font-weight: bold;
 }
 .home{
-  padding-top: 5%;
+  height: 100vh;
+  padding-top: 10%;
   background-color: #011401;
 }
 .box-home {

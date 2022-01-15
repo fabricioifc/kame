@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "HomePage",
+  name: "Jogos",
   methods: {
     scrollToElement() {
       const el = this.$refs.scrollToMe;

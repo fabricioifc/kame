@@ -126,7 +126,7 @@
             <div class="time-item">
               <b-col cols="8" class="item-time">
                 <h6 class="nome-time">João Eduardo</h6>
-                <span class="span-time">Alune IFC Fraiburgo</span>
+                <span class="span-time">Aluno IFC Fraiburgo</span>
               </b-col>
               <b-col cols="4">
                 <b-img
@@ -237,10 +237,10 @@ export default {
 }
 
 .landing-page-logo {
-  width: 80%;
-  height: 72%;
+  width: 90%;
+  height: 80%;
   margin: 6%;
-  margin-left: 23%;
+  margin-left: 20%;
   margin-bottom: 10%;
 }
 

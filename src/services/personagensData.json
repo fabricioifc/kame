@@ -1,0 +1,33 @@
+{
+    "personagens": [
+        {
+            "code": 1,
+            "image": "@/assets/images/Personagens/bonifacio.jpg"
+        }, 
+        {
+            "code": 2,
+            "image": "@/assets/images/Personagens/frei_rogerio.jpg"
+        },
+        {
+            "code": 3,
+            "image": "@/assets/images/Personagens/jose_maria.jpg"
+        }, 
+        {
+            "code": 4,
+            "image": "@/assets/images/Personagens/joao_teixeira.jpg"
+        },
+        {
+            "code": 5,
+            "image": "@/assets/images/Personagens/joao.jpg"
+        }, 
+        {
+            "code": 6,
+            "image": "@/assets/images/Personagens/teodora.jpg"
+        },
+        {
+            "code": 7,
+            "nome": "joão",
+            "image": "@/assets/images/Personagens/percival.jpg"
+        }
+    ]
+}

@@ -1,3 +1,7 @@
+<script>
+    console.log('euqijo')
+</script>
+
 <template>
 <div class="fundo">
   <section class="pt-5">
@@ -19,16 +23,16 @@
       class="pergunta"
       v-show="status.pronto && status.iniciar"
     >
-      <h1>Qual é a bandeira do contestado?</h1>
+      <h1>Qual desses é o João Maria?</h1>
       <p><code>{{status.tentativas}} tentativas</code></p>
 
       <span
-        class="bandeiras"
+        class="personagens"
         v-bind:key="item.code"
-        v-for="item in bandeiras"
+        v-for="item in personagens"
       >
-        <Bandeira
-          :bandeira=item
+        <Personagem
+          :personagem=item
           :class="!selecionada ? '' : item == selecionada ? 'selecionada' : 'outras'"
           @click="enviar"
         />
@@ -68,19 +72,19 @@
     </button>
 
   </section>
-  </div>
+</div>
 </template>
 
 <script>
-import Bandeira from "../components/Bandeira.vue";
-import getBandeirasRemote from "../services/bandeiras";
+import Personagem from "../components/Personagem.vue";
+import getPersonagensRemote from "../services/personagens.js";
 export default {
   props: [],
-  components: { Bandeira },
-  name: "Game",
+  components: { Personagem },
+  name: "GamePersonagem",
   data() {
     return {
-      bandeiras: [],
+      personagens: [],
       selecionada: null,
       resultado: null,
 
@@ -106,23 +110,23 @@ export default {
       this.resultado = null;
 
       if (!this.status.pronto || this.status.acertou || this.status.terminou) {
-        this.bandeiras = await getBandeirasRemote(10);
+        this.personagens = await getPersonagensRemote(7);
         this.status.pronto = true;
         this.status.tentativas = 3;
         this.status.terminou = false;
       }
     },
-    escolher: function (bandeira) {
+    escolher: function (personagem) {
       if (this.status.errou) {
         return false;
       }
 
-      const mesmaEscolha = this.selecionada && this.selecionada == bandeira;
+      const mesmaEscolha = this.selecionada && this.selecionada == personagem;
       if (mesmaEscolha) {
         this.selecionada = null;
         return false;
       }
-      this.selecionada = bandeira;
+      this.selecionada = personagem;
       console.log(this.selecionada);
     },
 
@@ -135,7 +139,7 @@ export default {
         }
 
         if (this.status.acertou) {
-          this.resultado = "Parabéns! Essa é a bandeira do contestado!";
+          this.resultado = "Parabéns! Esse é João Maria!";
           this.status.terminou = true;
         } else if (this.status.tentativas == 0) {
           this.resultado = "Game Over!";
@@ -151,11 +155,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .fundo{
-    padding-bottom: 100%;
+    padding-bottom: 5%;
     width: 100%;
     height: 100%;
     background-color: #011401;
+}
+
+section {
+  background-color: #011401;  
+  margin: 0 auto;
+  text-align: center;       
 }
 h1{
     padding-top: 5%;
@@ -166,32 +177,21 @@ p{
     font-family: "Anonymous Pro", monospace;
     color: white;
 }
-section {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.fundo{
-    padding-bottom: 5%;
-    width: 100%;
-    height: 100%;
-    background-color: #011401;
-}
-
 div.carregando {
   margin: 2rem;
   font-size: 2rem;
+  background-color: #011401;
 }
 
-.bandeiras {
+.personagens {
   margin-right: 10px;
 }
 
-.bandeiras.active {
+.personagens.active {
   background-color: red;
 }
 
-button.btn {
+button.btn { 
   margin: 0 auto;
   display: block;
   margin-top: 10px;

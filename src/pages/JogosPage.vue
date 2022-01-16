@@ -11,7 +11,7 @@
         <b-link class="rows" to="bandeira">
           <button>Questões de vestibular</button>
         </b-link>
-        <b-link class="rows" to="bandeira">
+        <b-link class="rows" to="personagem">
           <button>Adivinhar o personagem</button>
         </b-link>
       </div>

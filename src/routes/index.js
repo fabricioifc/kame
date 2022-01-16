@@ -9,6 +9,7 @@ import JogosPage from "../pages/JogosPage.vue";
 import AcervoPage from "../pages/AcervoPage.vue";
 import VisitasPage from "../pages/VisitasPage.vue";
 import GameVue from "../views/Game.vue";
+import GamePersonagemVue from "../views/GamePersonagem.vue";
 
 import { CarouselPlugin } from "bootstrap-vue";
 Vue.use(CarouselPlugin);
@@ -24,6 +25,7 @@ const rotas = [
   { path: "/acervo", name: "acervo", component: AcervoPage },
   { path: "/visitas", name: "visitas", component: VisitasPage },
   { path: "/bandeira", name: "bandeira", component: GameVue },
+  { path: "/personagem", name: "personagem", component: GamePersonagemVue },
 ];
 
 export const router = new VueRouter({

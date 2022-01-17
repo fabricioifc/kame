@@ -1,6 +1,5 @@
 <template>
-
-  <b-row class="mt-5 bg-secondary">
+  <b-row class="mt-5 bg-secondary time-line">
     <b-col>
       <div class="p-3">
         <!-- For demo purpose -->
@@ -546,7 +545,6 @@
       </div>
     </b-col>
   </b-row>
-
 </template>
 
 <script>
@@ -556,7 +554,10 @@ export default {
 </script>
 
 <style>
-
+.time-line {
+  position: fixed;
+  height: 100vh;
+}
 ul.timeline {
   list-style-type: none;
   position: relative;

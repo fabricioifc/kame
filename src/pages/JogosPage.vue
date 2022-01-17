@@ -8,7 +8,7 @@
         <b-link class="rows" to="bandeira">
           <button to="bandeira" class="btn-quiz">Adivinhar a bandeira</button>
         </b-link>
-        <b-link class="rows" to="bandeira">
+        <b-link class="rows" to="questoes">
           <button class="btn-quiz">Questões de vestibular</button>
         </b-link>
         <b-link class="rows" to="personagem">
@@ -43,7 +43,6 @@ export default {
   font-weight: 700;
 }
 
-
 .home {
   display: flex;
   flex-direction: column;
@@ -69,7 +68,7 @@ button {
   font-family: "Anonymous Pro", monospace;
 }
 
-.btn-quiz{
+.btn-quiz {
   background-color: rgba(255, 255, 255, 0.349);
   border: none;
   border-radius: 8px;

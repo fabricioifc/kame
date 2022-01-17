@@ -76,6 +76,7 @@
 
           <b-row>
             <b-col>
+              <h4>Visitas no Mês</h4>
               <b-button
                 variant="primary"
                 disabled
@@ -87,6 +88,7 @@
               </b-button>
             </b-col>
             <b-col>
+              <h4>Total de Visitas</h4>
               <b-button
                 variant="dark"
                 disabled

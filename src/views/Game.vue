@@ -1,5 +1,4 @@
 <template>
-<div class="fundo">
   <section class="pt-5">
 
     <div
@@ -12,9 +11,9 @@
       v-if="status.pronto && !status.iniciar"
       class="carregando"
     >
-      <code><button @click="status.iniciar = true">Jogar</button></code>
+      <code><button @click="status.iniciar = true" class="btn-jogar">Jogar</button></code>
     </div>
-
+<div class="fundo">
     <div
       class="pergunta"
       v-show="status.pronto && status.iniciar"
@@ -66,9 +65,8 @@
     >
       Reiniciar o Jogo
     </button>
-
+</div>
   </section>
-  </div>
 </template>
 
 <script>
@@ -155,16 +153,16 @@ export default {
     padding-bottom: 100%;
     width: 100%;
     height: 100%;
-    background-color: #011401;
 }
 h1{
-    padding-top: 5%;
+    padding-top: 10%;
+    text-align: center;
     font-family: "Antonio", sans-serif;
-    color: white;
+    color: black;
 }
 p{
     font-family: "Anonymous Pro", monospace;
-    color: white;
+    color: black;
 }
 section {
   margin: 0 auto;
@@ -175,7 +173,6 @@ section {
     padding-bottom: 5%;
     width: 100%;
     height: 100%;
-    background-color: #011401;
 }
 
 div.carregando {
@@ -195,9 +192,20 @@ button.btn {
   margin: 0 auto;
   display: block;
   margin-top: 10px;
+  border-color: black;
+  width: 20%;
+  background-color: rgba(0, 0, 0, 0.13);
+  color: black;
+}
+
+.btn-jogar{
+  border-radius: 8px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20%;
   border-color: white;
   width: 20%;
-  background-color: rgba(247, 247, 247, 0.13);
+  background-color: #022c02;
   color: white;
 }
 </style>

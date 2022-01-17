@@ -3,9 +3,7 @@
 </script>
 
 <template>
-<div class="fundo">
   <section class="pt-5">
-
     <div
       v-if="!status.pronto"
       class="carregando"
@@ -16,13 +14,13 @@
       v-if="status.pronto && !status.iniciar"
       class="carregando"
     >
-      <code><button @click="status.iniciar = true">Jogar</button></code>
+      <code><button @click="status.iniciar = true" class="btn-jogar">Jogar</button></code>
     </div>
-
     <div
       class="pergunta"
       v-show="status.pronto && status.iniciar"
     >
+    <div class="fundo">
       <h1>Qual desses é o João Maria?</h1>
       <p><code>{{status.tentativas}} tentativas</code></p>
 
@@ -56,7 +54,7 @@
     <button
       v-show="status.errou"
       @click="play"
-      class="btn btn-primary"
+      class="btn-reiniciar"
       type="button"
     >
       {{status.acertou ? 'Reiniciar o Jogo' : 'Tentar Novamente'}}
@@ -65,14 +63,13 @@
     <button
       v-show="status.terminou"
       @click="play"
-      class="btn btn-primary"
+      class="btn-reiniciar"
       type="button"
     >
       Reiniciar o Jogo
     </button>
-
-  </section>
 </div>
+  </section>
 </template>
 
 <script>
@@ -158,29 +155,24 @@ export default {
 
 .fundo{
     padding-bottom: 5%;
-    width: 100%;
-    height: 100%;
-    background-color: #011401;
 }
 
 section {
-  background-color: #011401;  
   margin: 0 auto;
   text-align: center;       
 }
 h1{
-    padding-top: 5%;
+    padding-top:2%; 
     font-family: "Antonio", sans-serif;
-    color: white;
+    color: black;
 }
 p{
     font-family: "Anonymous Pro", monospace;
-    color: white;
+    color: black;
 }
 div.carregando {
   margin: 2rem;
   font-size: 2rem;
-  background-color: #011401;
 }
 
 .personagens {
@@ -195,7 +187,25 @@ button.btn {
   margin: 0 auto;
   display: block;
   margin-top: 10px;
+  border-color: black;
+  width: 20%;
+  background-color: rgba(0, 0, 0, 0.13);
+  color: black;
+}
+.btn-jogar{
+  border-radius: 8px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20%;
   border-color: white;
+  width: 20%;
+  background-color: #022c02;
+  color: white;
+}
+
+.btn-reinicar{
+  display: block;
+  border-color: black;
   width: 20%;
   background-color: rgba(247, 247, 247, 0.13);
   color: white;

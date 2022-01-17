@@ -6,13 +6,13 @@
       </h1>
       <div class="list-quizes">
         <b-link class="rows" to="bandeira">
-          <button to="bandeira">Adivinhar a bandeira</button>
+          <button to="bandeira" class="btn-quiz">Adivinhar a bandeira</button>
         </b-link>
         <b-link class="rows" to="bandeira">
-          <button>Questões de vestibular</button>
+          <button class="btn-quiz">Questões de vestibular</button>
         </b-link>
         <b-link class="rows" to="personagem">
-          <button>Adivinhar o personagem</button>
+          <button class="btn-quiz">Adivinhar o personagem</button>
         </b-link>
       </div>
     </div>
@@ -43,11 +43,6 @@ export default {
   font-weight: 700;
 }
 
-.escrita-homepage {
-  font-family: "Anonymous Pro", monospace;
-  color: white;
-  margin-top: 5%;
-}
 
 .home {
   display: flex;
@@ -70,6 +65,15 @@ button {
   height: 50px;
   background-color: #fff8;
   border: none;
+  border-radius: 8px;
+  font-family: "Anonymous Pro", monospace;
+}
+
+.btn-quiz{
+  background-color: rgba(255, 255, 255, 0.349);
+  border: none;
+  border-radius: 8px;
+  font-family: "Anonymous Pro", monospace;
 }
 
 .rows {

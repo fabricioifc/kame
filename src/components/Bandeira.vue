@@ -2,7 +2,7 @@
   <span class="bandeira">
     <img @click="escolher(bandeira)"
       :src="bandeira.image"
-      width="108" height="81">
+      width="128" height="91">
   </span>
 </template>
 

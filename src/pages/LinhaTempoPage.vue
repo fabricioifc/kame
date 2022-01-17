@@ -1,6 +1,6 @@
 <template>
 
-  <b-row class="mt-5 bg-primary">
+  <b-row class="mt-5 bg-secondary">
     <b-col>
       <div class="p-3">
         <!-- For demo purpose -->

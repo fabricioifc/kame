@@ -1,6 +1,6 @@
 <template>
   <b-container fluid>
-    <b-row class="h-100 bg-light p-5">
+    <b-row class="h-100 bg-light mt-5 p-5">
       <b-col
         md="12"
         lg="5"
@@ -60,7 +60,7 @@
               <b-button
                 type="submit"
                 variant="primary"
-              >Registrar Presença</b-button>
+              >Registrar Visita</b-button>
             </b-form>
           </b-card-body>
         </b-card>
